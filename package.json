@@ -4,7 +4,8 @@
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
     "vue-router": "^3.x",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuetify": "^2.6.6"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.2"
