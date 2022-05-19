@@ -1,0 +1,40 @@
+<template>
+  <div>
+    <Row
+      v-for="row in board.rows"
+      :key="row.y"
+      :row="row"
+    />
+  </div>
+</template>
+
+<script>
+import Row from './row'
+
+export default {
+  name: "Boards",
+  components: {
+    Row
+  },
+  props: {
+    Desk
+  },
+  data() {
+    return {
+      boards: {
+        rows: Row,
+        name: "",
+        id: 0,
+      }
+    }
+  },
+  created() {
+    const rowNumber = Desk.rowIndex
+    Row = [...Array(rowNumber).keys()].map(i => new Row(i));
+  }
+}
+</script>
+
+<style>
+
+</style>
