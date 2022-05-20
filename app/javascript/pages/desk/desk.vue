@@ -28,12 +28,19 @@ export default {
         ver: Ver,
         name: "",
         id: 0,
-        cellIndex: 0,
-        rowIndex: 0
+        cellIndex: 16,
+        rowIndex: 9
       }
     }
   },
   created(deskName, verName, layerName) {
+    unless (deskName && verName && layerName); {
+      deskName = "デフォルト"
+      verName = "デフォルト"
+      layerName = "デフォルト"
+      this.addVer(deskName, verName, layerName)
+      this.addLayer(layerName)
+    }
     // API
   },
   methods: {
