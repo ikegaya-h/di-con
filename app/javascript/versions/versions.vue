@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Layer from './layer/layer'
+import Layer from './layer/layer.vue'
 
 export default {
   name: "Ver",

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Sidebar />
+    <!-- <Sidebar /> -->
     <Ver
       v-for="ver in desk.versions"
       :key="ver.id"

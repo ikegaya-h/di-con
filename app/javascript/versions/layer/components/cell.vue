@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Object from './object'
+import Object from './object.vue'
 
 export default {
   name: "Cell",

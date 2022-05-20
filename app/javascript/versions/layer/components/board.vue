@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Row from './row'
+import Row from './row.vue'
 
 export default {
   name: "Boards",

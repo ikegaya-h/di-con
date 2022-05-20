@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Desk from '../pages/desk/desk';
+import Desk from '../pages/desk/desk.vue';
 
 Vue.use(Router)
 

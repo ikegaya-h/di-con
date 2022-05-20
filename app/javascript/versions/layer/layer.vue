@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Board from './components/board'
+import Board from './components/board.vue'
 
 export default {
   name: "Layer",
