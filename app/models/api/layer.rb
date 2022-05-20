@@ -1,4 +1,4 @@
 class Api::Layer < ApplicationRecord
   belongs_to: :versions
-  has_many: :infos
+  has_many: :infos, dependent: :destroy
 end
