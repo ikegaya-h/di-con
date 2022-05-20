@@ -1,14 +1,14 @@
 <template>
-  <Desk />
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
-import Desk from './pages/desk/desk'
+
 
 export default {
-  components: {
-    Desk
-  },
+  
 }
 </script>
 
