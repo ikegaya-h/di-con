@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_05_20_063220) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "api_desks", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -19,29 +22,29 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
   end
 
   create_table "api_infos", force: :cascade do |t|
-    t.integer "object_id", null: false
-    t.integer "info_id", null: false
+    t.bigint "api_objects_id", null: false
+    t.bigint "api_infos_id", null: false
     t.string "value", null: false
-    t.integer "layer_id", null: false
+    t.bigint "api_layers_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["info_id"], name: "index_api_infos_on_info_id"
-    t.index ["layer_id"], name: "index_api_infos_on_layer_id"
-    t.index ["object_id"], name: "index_api_infos_on_object_id"
+    t.index ["api_infos_id"], name: "index_api_infos_on_api_infos_id"
+    t.index ["api_layers_id"], name: "index_api_infos_on_api_layers_id"
+    t.index ["api_objects_id"], name: "index_api_infos_on_api_objects_id"
   end
 
   create_table "api_layers", force: :cascade do |t|
-    t.integer "version_id", null: false
+    t.bigint "api_versions_id", null: false
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["version_id"], name: "index_api_layers_on_version_id"
+    t.index ["api_versions_id"], name: "index_api_layers_on_api_versions_id"
   end
 
   create_table "api_object_relationships", force: :cascade do |t|
     t.string "relationship", null: false
-    t.integer "from_obj_id_id", null: false
-    t.integer "to_obj_id_id", null: false
+    t.bigint "from_obj_id_id", null: false
+    t.bigint "to_obj_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["from_obj_id_id"], name: "index_api_object_relationships_on_from_obj_id_id"
@@ -68,10 +71,10 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "api_infos", "infos"
-  add_foreign_key "api_infos", "layers"
-  add_foreign_key "api_infos", "objects"
-  add_foreign_key "api_layers", "versions"
-  add_foreign_key "api_object_relationships", "objects", column: "from_obj_id_id"
-  add_foreign_key "api_object_relationships", "objects", column: "to_obj_id_id"
+  add_foreign_key "api_infos", "api_infos", column: "api_infos_id"
+  add_foreign_key "api_infos", "api_layers", column: "api_layers_id"
+  add_foreign_key "api_infos", "api_objects", column: "api_objects_id"
+  add_foreign_key "api_layers", "api_versions", column: "api_versions_id"
+  add_foreign_key "api_object_relationships", "api_objects", column: "from_obj_id_id"
+  add_foreign_key "api_object_relationships", "api_objects", column: "to_obj_id_id"
 end
