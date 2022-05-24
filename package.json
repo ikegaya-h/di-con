@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "4.3.0",
+    "@rails/webpacker": "^4.x",
     "vue": "^2.6.11",
     "vue-loader": "^15.8.3",
     "vue-router": "^3.x",
@@ -8,6 +8,6 @@
     "vuetify": "^2.6.6"
   },
   "devDependencies": {
-    "webpack-dev-server": "^4.9.0"
+    "webpack-dev-server": "^3.x"
   }
 }
