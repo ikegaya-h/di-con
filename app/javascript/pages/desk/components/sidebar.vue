@@ -14,7 +14,7 @@
 export default {
   name: "Sidebar",
   props: {
-    Ver
+    Desk
   }
 }
 </script>
