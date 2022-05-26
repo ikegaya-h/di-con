@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { createVerify } from 'crypto'
 import Sidebar from './components/sidebar'
 
 export default {
