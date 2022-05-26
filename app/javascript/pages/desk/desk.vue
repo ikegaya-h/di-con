@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <Sidebar /> -->
+    <Sidebar />
     <Ver
       v-for="ver in desk.versions"
       :key="ver.id"
@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import Sidebar from './components/sidebar'
+import Sidebar from './components/sidebar.vue'
+import Ver from '../../versions/versions.vue'
 
 export default {
   name: "Desk",
