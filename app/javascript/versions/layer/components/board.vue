@@ -16,9 +16,6 @@ export default {
   components: {
     Row
   },
-  props: {
-    Desk
-  },
   data() {
     return {
       boards: {

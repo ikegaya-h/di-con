@@ -16,9 +16,6 @@ export default {
   components: {
     Cell
   },
-  props: {
-    Desk
-  },
   data() {
     return {
       row: {
