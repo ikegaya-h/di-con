@@ -26,9 +26,8 @@ export default {
   },
   methods: {
     addLayer(layerName) {
-      layer.name = layerName
-      layer.id = layer.length() + 1
-      Board = new Board
+      this.name = layerName
+      this.id = this.length() + 1
     }
   }
 }

@@ -1,37 +1,40 @@
 <template>
-  <v-layout>
+  <div class="row">
     <Cell
       v-for="cell in row.cells"
-      :key="cell.x-cell.y"
+      :key="`${cell.y}-${cell.x}`"
       :cell="cell"
     />
-  </v-layout>
+  </div>
 </template>
 
 <script>
 import Cell from './cell.vue'
+import { VCell } from './cell.vue'
 
+export class VRow {
+  cells;
+  y;
+  constructor(rowIndex) {
+    this.y = rowIndex
+    this.cells = [...Array(16).keys()].map(i => new VCell(i, rowIndex))
+  }
+}
 export default {
-  name: "Rows",
+  name: "Row",
   components: {
     Cell
   },
-  data() {
-    return {
-      row: {
-        cells: Cell,
-        y: 0,
-      }
-    }
+  props: {
+    row: {}
   },
-  created(rowIndex) {
-    cellIndex = Desk.cellIndex
-    this.index = rowIndex
-    Cell = [...Array(cellIndex).keys()].map(x => new Cell(x, rowIndex));
+  created() {
   }
 }
 </script>
 
 <style>
-
+.row {
+  display:flex;
+}
 </style>

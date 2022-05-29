@@ -4,7 +4,7 @@
     <Object
       class="object"
       v-for="object in Object"
-      :key="object.x-object.y"
+      :key="`${object.y}-${object.x}`"
       :object="object"
     />
   </div>
@@ -13,22 +13,23 @@
 <script>
 import Object from './object.vue'
 
+export class VCell {
+  x;
+  y;
+  constructor(cellIndex, rowIndex) {
+    this.x = cellIndex
+    this.y = rowIndex
+  }
+}
 export default {
   name: "Cell",
   components: {
     Object
   },
-  data() {
-    return {
-      cell: {
-        x: 0,
-        y: 0
-      },
-    }
+  props: {
+    cell: {}
   },
-  created(cellIndex, rowIndex) {
-    cell.x = cellIndex;
-    cell.y = rowIndex;
+  created() {
   }
 }
 </script>

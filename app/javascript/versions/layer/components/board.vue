@@ -10,7 +10,14 @@
 
 <script>
 import Row from './row.vue'
+import { VRow } from './row.vue'
 
+export class VBoard {
+  rows;
+  constructor() {
+    this.rows = [...Array(9).keys()].map(i => new VRow(i))
+  }
+}
 export default {
   name: "Boards",
   components: {
@@ -18,16 +25,12 @@ export default {
   },
   data() {
     return {
-      boards: {
-        rows: Row,
-        name: "",
-        id: 0,
-      }
+      board: {}
     }
   },
   created() {
-    const rowNumber = Desk.rowIndex
-    Row = [...Array(rowNumber).keys()].map(i => new Row(i));
+    // const rowNumber = Desk.rowIndex
+    this.board = new VBoard();
   }
 }
 </script>

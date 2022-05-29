@@ -1,10 +1,6 @@
 <template>
   <div>
-    <Layer
-      v-for="ver in ver.layer"
-      :key="ver.length()"
-      :ver="ver"
-    />
+    <Layer/>
   </div>
 </template>
 
@@ -30,9 +26,8 @@ export default {
   },
   methods: {
     addLayer(layerName) {
-      ver.name = verName
-      ver.id = ver.length() + 1
-      Layer = new Layer(layerName)
+      this.name = verName
+      this.id = this.length() + 1
     }
   },
 }

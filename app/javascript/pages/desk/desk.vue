@@ -1,11 +1,7 @@
 <template>
-  <div>
+  <div class="desk">
     <Sidebar />
-    <Ver
-      v-for="ver in desk.versions"
-      :key="ver.id"
-      :ver="ver"
-    ></Ver>
+    <Ver></Ver>
   </div>
 </template>
 
@@ -29,24 +25,22 @@ export default {
         name: "",
         id: 0,
         cellIndex: 16,
-        rowIndex: 9
-      }
+        rowIndex: 9,
+      },
+      deskName: "デフォルト",
+      verName: "デフォルト",
+      layerName: "デフォルト"
     }
   },
-  created(deskName, verName, layerName) {
-    unless (deskName && verName && layerName); {
-      deskName = "デフォルト"
-      verName = "デフォルト"
-      layerName = "デフォルト"
-      this.addVer(deskName, verName, layerName)
-      this.addLayer(layerName)
-    }
+  created() {
+    this.addVer(this.deskName, this.verName, this.layerName)
+    this.addLayer(this.layerName)
     // API
   },
   methods: {
     addVer(deskName, verName, layerName) {
-      desk.name = deskName
-      desk.id = desk.length() + 1
+      this.name = deskName
+      this.id = desk.length() + 1
       Ver = new Ver(verName, layerName)
     }
   }
@@ -54,5 +48,7 @@ export default {
 </script>
 
 <style>
-
+.desk {
+  display:flex;
+}
 </style>
