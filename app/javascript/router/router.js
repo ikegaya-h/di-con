@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Desk from '../pages/desk/desk.vue';
+import TopIndex from '../pages/top/index';
+import DeskIndex from '../pages/desk/desk.vue';
 
 Vue.use(Router)
 
@@ -10,7 +11,12 @@ const router = new Router({
   routes: [
     {
       path: "/",
-      component: Desk,
+      component: TopIndex,
+      name: "TopIndex",
+    },
+    {
+      path: "/desks",
+      component: DeskIndex,
       name: "Desk"
     }
   ]
