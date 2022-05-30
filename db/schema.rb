@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
   enable_extension "plpgsql"
 
   create_table "api_desks", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "desk_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
 
   create_table "api_layers", force: :cascade do |t|
     t.bigint "api_versions_id", null: false
-    t.string "name", null: false
+    t.string "layer_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["api_versions_id"], name: "index_api_layers_on_api_versions_id"
@@ -52,21 +52,21 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
   end
 
   create_table "api_objects", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "x"
-    t.string "y"
+    t.string "obj_name", null: false
+    t.string "obj_x"
+    t.string "obj_y"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "api_properties", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "prop_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "api_versions", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "ver_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
