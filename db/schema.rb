@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
 
   create_table "api_object_relationships", force: :cascade do |t|
     t.string "relationship", null: false
-    t.bigint "from_obj_id_id", null: false
-    t.bigint "to_obj_id_id", null: false
+    t.bigint "from_obj_id", null: false
+    t.bigint "to_obj_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["from_obj_id_id"], name: "index_api_object_relationships_on_from_obj_id_id"
-    t.index ["to_obj_id_id"], name: "index_api_object_relationships_on_to_obj_id_id"
+    t.index ["from_obj_id"], name: "index_api_object_relationships_on_from_obj_id"
+    t.index ["to_obj_id"], name: "index_api_object_relationships_on_to_obj_id"
   end
 
   create_table "api_objects", force: :cascade do |t|
@@ -75,6 +75,6 @@ ActiveRecord::Schema.define(version: 2022_05_20_063220) do
   add_foreign_key "api_infos", "api_layers", column: "api_layers_id"
   add_foreign_key "api_infos", "api_objects", column: "api_objects_id"
   add_foreign_key "api_layers", "api_versions", column: "api_versions_id"
-  add_foreign_key "api_object_relationships", "api_objects", column: "from_obj_id_id"
-  add_foreign_key "api_object_relationships", "api_objects", column: "to_obj_id_id"
+  add_foreign_key "api_object_relationships", "api_objects", column: "from_obj_id"
+  add_foreign_key "api_object_relationships", "api_objects", column: "to_obj_id"
 end
