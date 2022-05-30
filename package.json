@@ -3,12 +3,14 @@
     "@rails/activestorage": "^6.0.5",
     "@rails/ujs": "^6.0.5",
     "@rails/webpacker": "^4.x",
+    "axios": "^0.27.2",
     "turbolinks": "^5.2.0",
     "vue": "^2.x",
     "vue-loader": "^15.x",
     "vue-router": "^3.x",
     "vue-template-compiler": "^2.6.14",
-    "vuetify": "^2.6.6"
+    "vuetify": "^2.6.6",
+    "vuex": "^3.x"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.x"
